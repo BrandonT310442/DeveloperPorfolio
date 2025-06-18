@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -63,44 +65,100 @@ html, body {
   transform: translate(-50%, -50%) !important;
   width: 520px;
   height: 450px;
-  background: rgba(0, 0, 0, 0.08);
+  background: rgba(0, 0, 0, 0.05);
   backdrop-filter: blur(40px);
   border: 1px solid rgba(255, 255, 255, 0.05);
   border-radius: 24px;
   padding: 32px;
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
   z-index: 10000 !important;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   color: #ffffff;
   overflow: hidden;
   pointer-events: auto !important;
 }
 
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .portfolio-card {
+    width: 90vw;
+    height: 70vh;
+    padding: 20px;
+    border-radius: 20px;
+    max-width: 400px;
+    max-height: 500px;
+  }
+}
+
+@media (max-width: 480px) {
+  .portfolio-card {
+    width: 95vw;
+    height: 65vh;
+    padding: 16px;
+    border-radius: 16px;
+    max-height: 450px;
+  }
+}
+
 /* Navigation Buttons */
 .nav-buttons {
   display: flex;
-  gap: 4px;
-  margin-bottom: 24px;
+  gap: 2px;
+  margin-bottom: 28px;
   position: relative;
   z-index: 10000;
-  padding: 4px;
-  background: rgba(255, 255, 255, 0.04);
-  border-radius: 20px;
-  backdrop-filter: blur(10px);
+  padding: 3px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 18px;
+  backdrop-filter: blur(15px);
+  width: fit-content;
 }
 
 .nav-button {
-  padding: 10px 18px;
+  padding: 8px 16px;
   background: transparent;
   border: none;
-  border-radius: 16px;
+  border-radius: 15px;
   color: rgba(255, 255, 255, 0.7);
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 500;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  letter-spacing: 0.3px;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
+  white-space: nowrap;
+}
+
+/* Mobile Navigation */
+@media (max-width: 768px) {
+  .nav-buttons {
+    gap: 1px;
+    padding: 2px;
+    border-radius: 16px;
+    margin-bottom: 20px;
+  }
+  
+  .nav-button {
+    padding: 6px 12px;
+    font-size: 11px;
+    border-radius: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-buttons {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2px;
+  }
+  
+  .nav-button {
+    padding: 8px 10px;
+    font-size: 10px;
+    min-width: 60px;
+  }
 }
 
 .nav-button::before {
@@ -111,14 +169,14 @@ html, body {
   right: 0;
   bottom: 0;
   background: rgba(255, 255, 255, 0.1);
-  border-radius: 16px;
+  border-radius: 15px;
   opacity: 0;
   transition: opacity 0.3s ease;
 }
 
 .nav-button:hover {
   color: #ffffff;
-  transform: translateY(-1px);
+  transform: translateY(-0.5px);
 }
 
 .nav-button:hover::before {
@@ -141,6 +199,19 @@ html, body {
   z-index: 10000;
 }
 
+/* Mobile Card Content */
+@media (max-width: 768px) {
+  .card-content {
+    height: calc(100% - 60px);
+  }
+}
+
+@media (max-width: 480px) {
+  .card-content {
+    height: calc(100% - 55px);
+  }
+}
+
 .card-header {
   margin-bottom: 20px;
 }
@@ -153,6 +224,8 @@ html, body {
   align-items: center;
   gap: 8px;
   color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: -0.5px;
 }
 
 .card-subtitle {
@@ -160,6 +233,9 @@ html, body {
   opacity: 0.7;
   margin-bottom: 16px;
   color: rgba(255, 255, 255, 0.8);
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.2px;
 }
 
 .card-description {
@@ -168,6 +244,58 @@ html, body {
   opacity: 0.85;
   margin-bottom: 20px;
   color: rgba(255, 255, 255, 0.9);
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+}
+
+/* Mobile Typography */
+@media (max-width: 768px) {
+  .card-title {
+    font-size: 28px;
+    margin-bottom: 6px;
+    gap: 6px;
+  }
+  
+  .card-subtitle {
+    font-size: 14px;
+    margin-bottom: 14px;
+  }
+  
+  .card-description {
+    font-size: 14px;
+    margin-bottom: 16px;
+  }
+  
+  .section-text {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .card-title {
+    font-size: 24px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+  
+  .card-subtitle {
+    font-size: 13px;
+    margin-bottom: 12px;
+  }
+  
+  .card-description {
+    font-size: 13px;
+    margin-bottom: 14px;
+  }
+  
+  .section-text {
+    font-size: 13px;
+    line-height: 1.5;
+    margin-bottom: 12px;
+  }
 }
 
 /* Content Sections */
@@ -184,6 +312,14 @@ html, body {
   line-height: 1.7;
   color: rgba(255, 255, 255, 0.85);
   margin-bottom: 16px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.1px;
+}
+
+.section-text strong {
+  color: rgba(255, 255, 255, 0.95);
+  font-weight: 600;
 }
 
 /* Custom Scrollbar */
@@ -203,4 +339,11 @@ html, body {
 
 .card-content::-webkit-scrollbar-thumb:hover {
   background: rgba(255, 255, 255, 0.3);
+}
+
+/* Mobile scrollbar */
+@media (max-width: 768px) {
+  .card-content::-webkit-scrollbar {
+    width: 3px;
+  }
 }
