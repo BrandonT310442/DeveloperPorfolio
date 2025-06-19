@@ -82,21 +82,21 @@ html, body {
 @media (max-width: 768px) {
   .portfolio-card {
     width: 90vw;
-    height: 70vh;
+    height: 55vh;
     padding: 20px;
     border-radius: 20px;
     max-width: 400px;
-    max-height: 500px;
+    max-height: 400px;
   }
 }
 
 @media (max-width: 480px) {
   .portfolio-card {
     width: 95vw;
-    height: 65vh;
+    height: 50vh;
     padding: 16px;
     border-radius: 16px;
-    max-height: 450px;
+    max-height: 350px;
   }
 }
 

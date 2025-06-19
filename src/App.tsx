@@ -11,17 +11,14 @@ export default function App() {
         return (
           <div className="content-section active">
             <div className="card-header">
-              <h2 className="card-title">Brandon's World 🌍</h2>
-              <p className="card-subtitle">Engineer & builder, moonlighting as a student.</p>
+              <h2 className="card-title">Brandon's Tai</h2>
+              <p className="card-subtitle">Software Engineer | CS @ University of Toronto</p>
             </div>
             <p className="section-text">
-              Hey there! I'm Brandon, a passionate software engineer who loves building innovative digital experiences. 
-              Currently pursuing my studies while working on exciting projects that push the boundaries of technology.
+             I'm currently studying at the University of Toronto. I love to build innovative software, and I'm currently interested in Full Stack Development and AI
             </p>
             <p className="section-text">
-              I specialize in full-stack development with a focus on modern web technologies, 3D graphics, and user experience design. 
-              When I'm not coding, you'll find me exploring new frameworks, contributing to open source, or dreaming up the next big idea.
-            </p>
+ When I’m not in school, I’m usually playing and watching basketball and baseball.</p>
           </div>
         );
       case 'skills':
