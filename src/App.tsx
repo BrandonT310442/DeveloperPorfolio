@@ -1,5 +1,5 @@
 import Spline from '@splinetool/react-spline';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './App.css';
 
 export default function App() {
@@ -7,6 +7,7 @@ export default function App() {
   const [currentProjectIndex, setCurrentProjectIndex] = useState(0);
   const [showProjectDetail, setShowProjectDetail] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+  const [loadingError, setLoadingError] = useState(false);
 
   const projects = [
     {
@@ -360,48 +361,69 @@ export default function App() {
     }, 800);
   };
 
-  if (isLoading) {
-    return (
-      <div className="loading-screen">
-        <div className="loading-content">
-          <div className="loading-logo">
-            <div className="loading-initials">BT</div>
-          </div>
-          <div className="loading-text">
-            <h2 className="loading-title">Brandon Tai</h2>
-            <p className="loading-subtitle">Software Engineer</p>
-          </div>
-          <div className="loading-spinner">
-            <div className="spinner-ring"></div>
-            <div className="spinner-ring"></div>
-            <div className="spinner-ring"></div>
-          </div>
-          <p className="loading-message">Loading experience...</p>
-        </div>
-        <div className="loading-particles">
-          <div className="particle"></div>
-          <div className="particle"></div>
-          <div className="particle"></div>
-          <div className="particle"></div>
-          <div className="particle"></div>
-        </div>
-        {/* Hidden Spline component to preload */}
-        <div style={{ position: 'absolute', left: '-9999px', top: '-9999px' }}>
-          <Spline 
-            scene="https://prod.spline.design/rhOvjkTN2GFBt0uz/scene.splinecode" 
-            onLoad={handleSplineLoad}
-          />
-        </div>
-      </div>
-    );
-  }
+  const handleSplineError = () => {
+    console.error('Failed to load Spline scene');
+    setLoadingError(true);
+    // Still hide loading screen even if Spline fails
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 1000);
+  };
+
+  // Add timeout fallback in case Spline never loads
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      if (isLoading) {
+        console.warn('Spline loading timeout - proceeding without 3D scene');
+        setLoadingError(true);
+        setIsLoading(false);
+      }
+    }, 10000); // 10 second timeout
+
+    return () => clearTimeout(timeout);
+  }, [isLoading]);
 
   return (
     <>
-      <Spline 
-        scene="https://prod.spline.design/rhOvjkTN2GFBt0uz/scene.splinecode" 
-        className="spline"
-      />
+      {!loadingError && (
+        <Spline 
+          scene="https://prod.spline.design/rhOvjkTN2GFBt0uz/scene.splinecode" 
+          className="spline"
+          onLoad={handleSplineLoad}
+          onError={handleSplineError}
+        />
+      )}
+      
+      {loadingError && (
+        <div className="fallback-background"></div>
+      )}
+
+      {isLoading && (
+        <div className="loading-screen">
+          <div className="loading-content">
+            <div className="loading-logo">
+              <div className="loading-initials">BT</div>
+            </div>
+            <div className="loading-text">
+              <h2 className="loading-title">Brandon Tai</h2>
+              <p className="loading-subtitle">Software Engineer</p>
+            </div>
+            <div className="loading-spinner">
+              <div className="spinner-ring"></div>
+              <div className="spinner-ring"></div>
+              <div className="spinner-ring"></div>
+            </div>
+            <p className="loading-message">Loading experience...</p>
+          </div>
+          <div className="loading-particles">
+            <div className="particle"></div>
+            <div className="particle"></div>
+            <div className="particle"></div>
+            <div className="particle"></div>
+            <div className="particle"></div>
+          </div>
+        </div>
+      )}
       
       <div className="portfolio-card">
         <div className="nav-buttons">
