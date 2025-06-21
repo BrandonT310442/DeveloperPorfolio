@@ -4,6 +4,65 @@ import './App.css';
 
 export default function App() {
   const [activeSection, setActiveSection] = useState('about');
+  const [currentProjectIndex, setCurrentProjectIndex] = useState(0);
+  const [showProjectDetail, setShowProjectDetail] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+
+  const projects = [
+    {
+      name: "Qnect",
+      description: "An AI powered blind dating app that uses LLMs to match users based on interests and preferences.",
+      techStack: ["Vue.js", "Node.js", "MongoDB", "Express.js", "Groq LLM API", "Imentiv API"],
+      githubLink: "https://github.com/fredh2006/qnect",
+      demoLink: "https://www.youtube.com/watch?v=k2-dmvFxZMg",
+      imagePath: "/qnect.png"
+    },
+    {
+      name: "Vortex AI",
+      description: "A mobile AI app that combines language and image models into one easy to use mobile application. Utilizes the Groq API and StableDiffusion API.",
+      techStack: ["React Native", "ExpoGo", "Groq LLM API", "StableDiffusion API"],
+      githubLink: "https://github.com/BrandonT310442/VortexAI2",
+      imagePath: "/Vortex4.png"
+    },
+    {
+      name: "FRC Data Analytics App",
+      description: "A app designed for the FRC 2024 Crescendo Season that analyzes robot performance data to help teams make strategic alliance selections.",
+      techStack: ["Vue.js", "Express", "MongoDB", "Node.js"],
+      demoLink: "https://crescendoscoutingapp.onrender.com/",
+      imagePath: "/FRC.png"
+    },
+    {
+      name: "Vendoza Marketplace",
+      description: "A comprehensive online marketplace platform where users can buy and sell items with integrated chat functionality and secure user authentication.",
+      techStack: ["Passport.js", "Vue.js", "Express.js", "MongoDB", "Node.js"],
+      githubLink: "https://github.com/RayhanMamdani/WebStackApp",
+      imagePath: "/Vendoza.png"
+    },
+    {
+      name: "Tration",
+      description: "A Chrome extension that helps people with dyslexia read more effectively. Features dyslexia-friendly fonts, ad-blocker, color customization, letter spacing adjustment, text-to-speech, and a built-in dictionary.",
+      techStack: ["HTML", "CSS", "JavaScript", "Chrome Extension API"],
+      demoLink: "https://devpost.com/software/tration",
+      imagePath: "/Tration.png"
+    }
+  ];
+
+  const getProjectPreview = (projectName: string) => {
+    switch (projectName) {
+      case "Qnect":
+        return "AI-powered blind dating app with intelligent matching";
+      case "Vortex AI":
+        return "Mobile AI app combining language and image models";
+      case "FRC Data Analytics App":
+        return "Robot performance analytics for strategic decisions";
+      case "Vendoza Marketplace":
+        return "Comprehensive marketplace platform for buying and selling";
+      case "Tration":
+        return "Chrome extension helping people with dyslexia read better";
+      default:
+        return "Innovative software project";
+    }
+  };
 
   const renderContent = () => {
     switch (activeSection) {
@@ -11,14 +70,14 @@ export default function App() {
         return (
           <div className="content-section active">
             <div className="card-header">
-              <h2 className="card-title">Brandon's Tai</h2>
+              <h2 className="card-title">Brandon Tai</h2>
               <p className="card-subtitle">Software Engineer | CS @ University of Toronto</p>
             </div>
             <p className="section-text">
-             I'm currently studying at the University of Toronto. Lately, I've been focused on full stack development and exploring how AI can bring new innovative solutions.
+             I'm currently studying at the University of Toronto. I enjoy building impactful software and love exploring new innovative ideas. I'm always open to new opportunities, so feel free to reach out!
             </p>
             <p className="section-text">
- When I'm not in school, I'm usually watching the Toronto Raptors and the Toronto Blue Jays.</p>
+ When I'm not in school, I'm usually watching the Toronto Raptors and the Toronto Blue Jays!</p>
           </div>
         );
       case 'skills':
@@ -82,48 +141,156 @@ export default function App() {
               <h2 className="card-title">Experience 🚀</h2>
               <p className="card-subtitle">My professional journey and achievements.</p>
             </div>
-            <p className="section-text">
-              <strong>Senior Software Engineer @ TechCorp</strong><br/>
-              Led development of high-performance web applications serving 100k+ users. Architected microservices infrastructure 
-              and mentored junior developers in modern development practices.
-            </p>
-            <p className="section-text">
-              <strong>Full Stack Developer @ StartupXYZ</strong><br/>
-              Built the entire product from ground up using React and Node.js. Implemented real-time features, 
-              payment systems, and scalable backend architecture.
-            </p>
-            <p className="section-text">
-              <strong>Freelance Developer</strong><br/>
-              Worked with various clients to create custom web solutions, from e-commerce platforms to 
-              interactive 3D experiences. Specialized in performance optimization and modern UI design.
-            </p>
+            
+            <div className="experience-timeline">
+              <div className="experience-item">
+                <div className="experience-header">
+                  <div className="experience-title">Software Engineer Intern</div>
+                  <div className="experience-company">Sentri AI</div>
+                  <div className="experience-date">May 2025 - Present</div>
+                </div>
+                <div className="experience-description">
+                  Designed and implemented an automated answering pipeline using <span className="tech-highlight">LangGraph</span>, achieving 95% accuracy in security compliance responses. Built scalable full-stack features with <span className="tech-highlight">React</span>, <span className="tech-highlight">Next.js</span>, <span className="tech-highlight">Python</span>, and <span className="tech-highlight">FastAPI</span>.
+                </div>
+              </div>
+
+              <div className="experience-item">
+                <div className="experience-header">
+                  <div className="experience-title">Founding Engineer</div>
+                  <div className="experience-company">Stryde Health</div>
+                  <div className="experience-date">May 2025 - Present</div>
+                </div>
+                <div className="experience-description">
+                  Developed a comprehensive iPadOS patient application in <span className="tech-highlight">Swift</span> with a secure <span className="tech-highlight">AWS</span> backend powered by <span className="tech-highlight">Node.js</span> and <span className="tech-highlight">MongoDB</span>. Created an intuitive <span className="tech-highlight">React</span> dashboard for clinicians to monitor stroke recovery progress.
+                </div>
+              </div>
+
+              <div className="experience-item">
+                <div className="experience-header">
+                  <div className="experience-title">Full Stack Software Engineer</div>
+                  <div className="experience-company">UofT Blueprint</div>
+                  <div className="experience-date">Sep 2024 - Apr 2025</div>
+                </div>
+                <div className="experience-description">
+                  Developed <span className="tech-highlight">Kotlin</span> Android menstrual tracker (200+ users) with <span className="tech-highlight">Firebase</span> integration. Collaborated with 12-person team using MVVM architecture.
+                </div>
+              </div>
+
+              <div className="experience-item">
+                <div className="experience-header">
+                  <div className="experience-title">Lead Software Engineer</div>
+                  <div className="experience-company">FIRST Robotics Team 7558</div>
+                  <div className="experience-date">Sep 2022 - Jun 2024</div>
+                </div>
+                <div className="experience-description">
+                  Built full-stack analytics app using <span className="tech-highlight">MongoDB</span>, <span className="tech-highlight">Express.js</span>, <span className="tech-highlight">Vue.js</span>, and <span className="tech-highlight">Node.js</span> for robot performance analysis (250+ users).
+                </div>
+              </div>
+
+              <div className="experience-item">
+                <div className="experience-header">
+                  <div className="experience-title">Supply Chain Management Intern</div>
+                  <div className="experience-company">Qvella</div>
+                  <div className="experience-date">Jun 2023 - Aug 2023</div>
+                </div>
+                <div className="experience-description">
+                  Streamlined Bill of Materials analysis and performed warehouse inventory audits, optimizing procurement efficiency and minimizing excess stock.
+                </div>
+              </div>
+            </div>
           </div>
         );
-      case 'projects':
+      case 'projects': {
+        if (showProjectDetail) {
+          const currentProject = projects[currentProjectIndex];
+          return (
+            <div className="content-section active">
+              <div className="project-detail-header">
+                <button 
+                  onClick={() => setShowProjectDetail(false)}
+                  className="back-button"
+                >
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z"/>
+                  </svg>
+                  Back to Projects
+                </button>
+              </div>
+              
+              <div className="project-detail">
+                <div className="project-image">
+                  <img src={currentProject.imagePath} alt={currentProject.name} />
+                </div>
+                
+                <div className="project-info">
+                  <h3 className="project-title">{currentProject.name}</h3>
+                  <p className="project-description">{currentProject.description}</p>
+                  
+                  <div className="project-tech-stack">
+                    {currentProject.techStack.map((tech, index) => (
+                      <span key={index} className="project-tech-pill">{tech}</span>
+                    ))}
+                  </div>
+                  
+                  <div className="project-links">
+                    {currentProject.githubLink && (
+                      <a href={currentProject.githubLink} target="_blank" rel="noopener noreferrer" className="project-link github">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                        GitHub
+                      </a>
+                    )}
+                    {currentProject.demoLink && (
+                      <a href={currentProject.demoLink} target="_blank" rel="noopener noreferrer" className="project-link demo">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"/>
+                        </svg>
+                        {currentProject.demoLink.includes('youtube') ? 'Demo' : 'Live Demo'}
+                      </a>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
+          );
+        }
+        
+        // Project List View
         return (
           <div className="content-section active">
             <div className="card-header">
               <h2 className="card-title">Projects ⭐</h2>
-              <p className="card-subtitle">Some of my favorite work and side projects.</p>
+              <p className="card-subtitle">Some of my favourite work and side projects.</p>
             </div>
-            <p className="section-text">
-              <strong>Cosmic Portfolio</strong> - This interactive 3D portfolio you're currently viewing! Built with 
-              React, TypeScript, and Spline for the stunning space background.
-            </p>
-            <p className="section-text">
-              <strong>CloudSync Platform</strong> - A real-time collaboration platform with file sharing, 
-              video calls, and project management. Built with React, WebRTC, and WebSocket technology.
-            </p>
-            <p className="section-text">
-              <strong>AI Art Generator</strong> - Machine learning-powered art creation tool with custom neural networks. 
-              Features real-time generation and style transfer capabilities.
-            </p>
-            <p className="section-text">
-              <strong>Open Source Contributions</strong> - Active contributor to React ecosystem, 
-              with packages downloaded 50k+ times monthly.
-            </p>
+            
+            <div className="project-list-container">
+              {projects.map((project, index) => (
+                <button
+                  key={index}
+                  onClick={() => {
+                    setCurrentProjectIndex(index);
+                    setShowProjectDetail(true);
+                  }}
+                  className="project-list-item"
+                >
+                  <div className="project-list-content">
+                    <div className="project-list-header">
+                      <span className="project-list-name">{project.name}</span>
+                      <span className="project-list-preview">{getProjectPreview(project.name)}</span>
+                    </div>
+                  </div>
+                  <div className="project-list-arrow">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"/>
+                    </svg>
+                  </div>
+                </button>
+              ))}
+            </div>
           </div>
         );
+      }
       case 'contact':
         return (
           <div className="content-section active">
@@ -131,12 +298,23 @@ export default function App() {
               <h2 className="card-title">Contact 📫</h2>
               <p className="card-subtitle">Let's connect and build something amazing together.</p>
             </div>
-            <p className="section-text">
-              I'm always open to discussing new opportunities, collaborating on interesting projects, or just having a chat about technology and development.
-            </p>
             <div className="contact-links">
               <a 
-                href="https://linkedin.com/in/brandon" 
+                href="mailto:brandon.tai@mail.utoronto.ca"
+                className="contact-link email"
+              >
+                <div className="contact-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                  </svg>
+                </div>
+                <div className="contact-info">
+                  <span className="contact-title">Email</span>
+                  <span className="contact-description">Send me a message</span>
+                </div>
+              </a>
+              <a 
+                href="https://www.linkedin.com/in/brandon-t-041939226/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="contact-link linkedin"
@@ -152,7 +330,7 @@ export default function App() {
                 </div>
               </a>
               <a 
-                href="https://github.com/brandon" 
+                href="https://github.com/BrandonT310442" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="contact-link github"
@@ -174,6 +352,49 @@ export default function App() {
         return null;
     }
   };
+
+  const handleSplineLoad = () => {
+    // Add a small delay to ensure smooth transition
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 800);
+  };
+
+  if (isLoading) {
+    return (
+      <div className="loading-screen">
+        <div className="loading-content">
+          <div className="loading-logo">
+            <div className="loading-initials">BT</div>
+          </div>
+          <div className="loading-text">
+            <h2 className="loading-title">Brandon Tai</h2>
+            <p className="loading-subtitle">Software Engineer</p>
+          </div>
+          <div className="loading-spinner">
+            <div className="spinner-ring"></div>
+            <div className="spinner-ring"></div>
+            <div className="spinner-ring"></div>
+          </div>
+          <p className="loading-message">Loading experience...</p>
+        </div>
+        <div className="loading-particles">
+          <div className="particle"></div>
+          <div className="particle"></div>
+          <div className="particle"></div>
+          <div className="particle"></div>
+          <div className="particle"></div>
+        </div>
+        {/* Hidden Spline component to preload */}
+        <div style={{ position: 'absolute', left: '-9999px', top: '-9999px' }}>
+          <Spline 
+            scene="https://prod.spline.design/rhOvjkTN2GFBt0uz/scene.splinecode" 
+            onLoad={handleSplineLoad}
+          />
+        </div>
+      </div>
+    );
+  }
 
   return (
     <>
