@@ -28,7 +28,7 @@ export default function App() {
     {
       name: "FRC Data Analytics App",
       description: "A app designed for the FRC 2024 Crescendo Season that analyzes robot performance data to help teams make strategic alliance selections.",
-      techStack: ["Vue.js", "Express", "MongoDB", "Node.js"],
+      techStack: ["React.js", "Express", "MongoDB", "Node.js"],
       demoLink: "https://crescendoscoutingapp.onrender.com/",
       imagePath: "/FRC.png"
     },
@@ -159,10 +159,10 @@ export default function App() {
                 <div className="experience-header">
                   <div className="experience-title">Founding Engineer</div>
                   <div className="experience-company">Stryde Health</div>
-                  <div className="experience-date">May 2025 - Present</div>
+                  <div className="experience-date">Feb 2025 - Present</div>
                 </div>
                 <div className="experience-description">
-                  Developed a comprehensive iPadOS patient application in <span className="tech-highlight">Swift</span> with a secure <span className="tech-highlight">AWS</span> backend powered by <span className="tech-highlight">Node.js</span> and <span className="tech-highlight">MongoDB</span>. Created an intuitive <span className="tech-highlight">React</span> dashboard for clinicians to monitor stroke recovery progress.
+                  Developed patient app and clinician dashboard to enhance accessibility for stroke survivors; built using <span className="tech-highlight">React</span>, <span className="tech-highlight">Spring Boot</span>, and <span className="tech-highlight">AWS PostgreSQL</span> backend (entering trial at SHN in August). Integrated AI-powered recovery insights and used <span className="tech-highlight">LLMs</span> to generate cognition tests within the clinician dashboard, contributing to a <span className="tech-highlight">15% increase</span> in patient adherence.
                 </div>
               </div>
 
@@ -170,7 +170,7 @@ export default function App() {
                 <div className="experience-header">
                   <div className="experience-title">Full Stack Software Engineer</div>
                   <div className="experience-company">UofT Blueprint</div>
-                  <div className="experience-date">Sep 2024 - Apr 2025</div>
+                  <div className="experience-date">Sep 2024 - Mar 2025</div>
                 </div>
                 <div className="experience-description">
                   Developed <span className="tech-highlight">Kotlin</span> Android menstrual tracker (200+ users) with <span className="tech-highlight">Firebase</span> integration. Collaborated with 12-person team using MVVM architecture.
