@@ -1,6 +1,15 @@
 import Spline from '@splinetool/react-spline';
 import { useState, useEffect } from 'react';
 import './App.css';
+import { 
+  FaPython, FaJava, FaPhp, FaReact, FaNodeJs, FaVuejs, FaGitAlt, FaDocker, FaAws, FaLink, FaWindows
+} from 'react-icons/fa';
+import { 
+  SiTypescript, SiKotlin, SiLua, SiExpress, SiNextdotjs, SiFastapi, 
+  SiMongodb, SiFirebase, SiNeo4J, SiPostman, SiRender, SiGnubash, SiC
+} from 'react-icons/si';
+import { TbSql } from 'react-icons/tb';
+import { IoLogoJavascript } from 'react-icons/io5';
 
 export default function App() {
   const [activeSection, setActiveSection] = useState('about');
@@ -8,6 +17,7 @@ export default function App() {
   const [showProjectDetail, setShowProjectDetail] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [loadingError, setLoadingError] = useState(false);
+  const [currentTime, setCurrentTime] = useState(new Date());
 
   const projects = [
     {
@@ -28,7 +38,7 @@ export default function App() {
     {
       name: "FRC Data Analytics App",
       description: "A app designed for the FRC 2024 Crescendo Season that analyzes robot performance data to help teams make strategic alliance selections.",
-      techStack: ["React.js", "Express", "MongoDB", "Node.js"],
+      techStack: ["Express", "MongoDB", "Node.js"],
       demoLink: "https://crescendoscoutingapp.onrender.com/",
       imagePath: "/FRC.png"
     },
@@ -71,12 +81,32 @@ export default function App() {
         return (
           <div className="content-section active">
             <div className="card-header">
-              <h2 className="card-title">Brandon Tai</h2>
+              <div className="name-time-container">
+                <h2 className="card-title">Brandon Tai</h2>
+                <div className="current-time">
+                  {currentTime.toLocaleTimeString('en-US', { 
+                    hour12: false, 
+                    hour: '2-digit', 
+                    minute: '2-digit',
+                    timeZone: 'America/Toronto'
+                  })}
+                  <span className="timezone">EST</span>
+                </div>
+              </div>
               <p className="card-subtitle">Software Engineer | CS @ University of Toronto</p>
             </div>
             <p className="section-text">
-             I'm currently studying at the University of Toronto. I enjoy building impactful software and love exploring new innovative ideas. I'm always open to new opportunities, so feel free to reach out!
-            </p>
+            I'm from Toronto and enjoy building impactful software while exploring new, innovative ideas. I'm always open to new opportunities, so feel free to reach out!
+
+
+
+
+
+
+
+
+
+</p>
             <p className="section-text">
  When I'm not in school, I'm usually watching the Toronto Raptors and the Toronto Blue Jays!</p>
           </div>
@@ -92,45 +122,126 @@ export default function App() {
             <div className="skills-category">
               <h3 className="skills-category-title">Languages</h3>
               <div className="skills-pills">
-                <span className="skill-pill primary">JavaScript</span>
-                <span className="skill-pill primary">Python</span>
-                <span className="skill-pill primary">TypeScript</span>
-                <span className="skill-pill secondary">Java</span>
-                <span className="skill-pill secondary">C</span>
-                <span className="skill-pill secondary">Kotlin</span>
-                <span className="skill-pill tertiary">Lua</span>
-                <span className="skill-pill tertiary">PHP</span>
-                <span className="skill-pill secondary">SQL</span>
+                <span className="skill-pill primary">
+                  <span className="skill-icon"><IoLogoJavascript /></span>
+                  JavaScript
+                </span>
+                <span className="skill-pill primary">
+                  <span className="skill-icon"><FaPython /></span>
+                  Python
+                </span>
+                <span className="skill-pill primary">
+                  <span className="skill-icon"><SiTypescript /></span>
+                  TypeScript
+                </span>
+                <span className="skill-pill secondary">
+                  <span className="skill-icon"><FaJava /></span>
+                  Java
+                </span>
+                <span className="skill-pill secondary">
+                  <span className="skill-icon"><SiC /></span>
+                  C
+                </span>
+                <span className="skill-pill secondary">
+                  <span className="skill-icon"><SiKotlin /></span>
+                  Kotlin
+                </span>
+                <span className="skill-pill tertiary">
+                  <span className="skill-icon"><SiLua /></span>
+                  Lua
+                </span>
+                <span className="skill-pill tertiary">
+                  <span className="skill-icon"><FaPhp /></span>
+                  PHP
+                </span>
+                <span className="skill-pill secondary">
+                  <span className="skill-icon"><TbSql /></span>
+                  SQL
+                </span>
               </div>
             </div>
 
             <div className="skills-category">
               <h3 className="skills-category-title">Frameworks & Libraries</h3>
               <div className="skills-pills">
-                <span className="skill-pill primary">React</span>
-                <span className="skill-pill primary">Node.js</span>
-                <span className="skill-pill primary">Express.js</span>
-                <span className="skill-pill secondary">Next.js</span>
-                <span className="skill-pill secondary">Vue.js</span>
-                <span className="skill-pill secondary">FastAPI</span>
-                <span className="skill-pill tertiary">LangChain</span>
-                <span className="skill-pill tertiary">LangGraph</span>
+                <span className="skill-pill primary">
+                  <span className="skill-icon"><FaReact /></span>
+                  React
+                </span>
+                <span className="skill-pill primary">
+                  <span className="skill-icon"><FaNodeJs /></span>
+                  Node.js
+                </span>
+                <span className="skill-pill primary">
+                  <span className="skill-icon"><SiExpress /></span>
+                  Express.js
+                </span>
+                <span className="skill-pill secondary">
+                  <span className="skill-icon"><SiNextdotjs /></span>
+                  Next.js
+                </span>
+                <span className="skill-pill secondary">
+                  <span className="skill-icon"><FaVuejs /></span>
+                  Vue.js
+                </span>
+                <span className="skill-pill secondary">
+                  <span className="skill-icon"><SiFastapi /></span>
+                  FastAPI
+                </span>
+                <span className="skill-pill tertiary">
+                  <span className="skill-icon"><FaLink /></span>
+                  LangChain
+                </span>
+                <span className="skill-pill tertiary">
+                  <span className="skill-icon"><FaLink /></span>
+                  LangGraph
+                </span>
               </div>
             </div>
 
             <div className="skills-category">
               <h3 className="skills-category-title">Tools & Technologies</h3>
               <div className="skills-pills">
-                <span className="skill-pill primary">Git</span>
-                <span className="skill-pill primary">MongoDB</span>
-                <span className="skill-pill secondary">Docker</span>
-                <span className="skill-pill secondary">AWS</span>
-                <span className="skill-pill secondary">Firebase</span>
-                <span className="skill-pill secondary">Azure</span>
-                <span className="skill-pill tertiary">Neo4j</span>
-                <span className="skill-pill tertiary">Postman</span>
-                <span className="skill-pill tertiary">Render</span>
-                <span className="skill-pill tertiary">Bash</span>
+                <span className="skill-pill primary">
+                  <span className="skill-icon"><FaGitAlt /></span>
+                  Git
+                </span>
+                <span className="skill-pill primary">
+                  <span className="skill-icon"><SiMongodb /></span>
+                  MongoDB
+                </span>
+                <span className="skill-pill secondary">
+                  <span className="skill-icon"><FaDocker /></span>
+                  Docker
+                </span>
+                <span className="skill-pill secondary">
+                  <span className="skill-icon"><FaAws /></span>
+                  AWS
+                </span>
+                <span className="skill-pill secondary">
+                  <span className="skill-icon"><SiFirebase /></span>
+                  Firebase
+                </span>
+                <span className="skill-pill secondary">
+                  <span className="skill-icon"><FaWindows /></span>
+                  Azure
+                </span>
+                <span className="skill-pill tertiary">
+                  <span className="skill-icon"><SiNeo4J /></span>
+                  Neo4j
+                </span>
+                <span className="skill-pill tertiary">
+                  <span className="skill-icon"><SiPostman /></span>
+                  Postman
+                </span>
+                <span className="skill-pill tertiary">
+                  <span className="skill-icon"><SiRender /></span>
+                  Render
+                </span>
+                <span className="skill-pill tertiary">
+                  <span className="skill-icon"><SiGnubash /></span>
+                  Bash
+                </span>
               </div>
             </div>
           </div>
@@ -383,6 +494,15 @@ export default function App() {
     return () => clearTimeout(timeout);
   }, [isLoading]);
 
+  // Update time every second
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentTime(new Date());
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <>
       {!loadingError && (
@@ -414,13 +534,6 @@ export default function App() {
               <div className="spinner-ring"></div>
             </div>
             <p className="loading-message">Loading experience...</p>
-          </div>
-          <div className="loading-particles">
-            <div className="particle"></div>
-            <div className="particle"></div>
-            <div className="particle"></div>
-            <div className="particle"></div>
-            <div className="particle"></div>
           </div>
         </div>
       )}
