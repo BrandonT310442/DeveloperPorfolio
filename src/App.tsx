@@ -2,7 +2,7 @@ import Spline from '@splinetool/react-spline';
 import { useState, useEffect } from 'react';
 import './App.css';
 import { 
-  FaPython, FaJava, FaPhp, FaReact, FaNodeJs, FaVuejs, FaGitAlt, FaDocker, FaAws, FaLink, FaWindows
+  FaPython, FaJava, FaPhp, FaReact, FaNodeJs, FaVuejs, FaGitAlt, FaDocker, FaAws, FaLink, FaWindows, FaExpand, FaTimes
 } from 'react-icons/fa';
 import { 
   SiTypescript, SiKotlin, SiLua, SiExpress, SiNextdotjs, SiFastapi, 
@@ -18,8 +18,17 @@ export default function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [loadingError, setLoadingError] = useState(false);
   const [currentTime, setCurrentTime] = useState(new Date());
+  const [showImageModal, setShowImageModal] = useState(false);
+  const [modalImage, setModalImage] = useState({ src: '', alt: '' });
 
   const projects = [
+    {
+      name: "Comet",
+      description: "Comet is a Chrome extension that brings the power of AI-assisted editing to Overleaf, similar to how Cursor revolutionized code editing. Simply describe your LaTeX changes in natural language, and watch as Comet generates and applies precise LaTeX code directly to your Overleaf documents.",
+      techStack: ["Vue.js", "LangChain", "LangGraph", "DeepSeek V3", "Express.js", "Supabase", "Chrome Extension API"],
+      githubLink: "https://github.com/BrandonT310442/Comet-Extension",
+      imagePath: "/Comet Extension.png"
+    },
     {
       name: "Qnect",
       description: "An AI powered blind dating app that uses LLMs to match users based on interests and preferences.",
@@ -60,6 +69,8 @@ export default function App() {
 
   const getProjectPreview = (projectName: string) => {
     switch (projectName) {
+      case "Comet":
+        return "The Cursor for Overleaf - AI-powered LaTeX editing";
       case "Qnect":
         return "AI-powered blind dating app with intelligent matching";
       case "Vortex AI":
@@ -73,6 +84,15 @@ export default function App() {
       default:
         return "Innovative software project";
     }
+  };
+
+  const handleImageExpand = (imageSrc: string, imageAlt: string) => {
+    setModalImage({ src: imageSrc, alt: imageAlt });
+    setShowImageModal(true);
+  };
+
+  const closeImageModal = () => {
+    setShowImageModal(false);
   };
 
   const renderContent = () => {
@@ -330,8 +350,14 @@ export default function App() {
               </div>
               
               <div className="project-detail">
-                <div className="project-image">
+                <div className="project-image" onClick={() => handleImageExpand(currentProject.imagePath, currentProject.name)}>
                   <img src={currentProject.imagePath} alt={currentProject.name} />
+                  <div className="project-image-expand" onClick={(e) => {
+                    e.stopPropagation();
+                    handleImageExpand(currentProject.imagePath, currentProject.name);
+                  }}>
+                    <FaExpand />
+                  </div>
                 </div>
                 
                 <div className="project-info">
@@ -580,6 +606,21 @@ export default function App() {
       <div className="credit-badge">
         made with ❤️
       </div>
+
+      {showImageModal && (
+        <div className="image-modal" onClick={closeImageModal}>
+          <div className="image-modal-content" onClick={(e) => e.stopPropagation()}>
+            <button className="image-modal-close" onClick={closeImageModal}>
+              <FaTimes />
+            </button>
+            <img 
+              src={modalImage.src} 
+              alt={modalImage.alt} 
+              className="image-modal-img"
+            />
+          </div>
+        </div>
+      )}
     </>
   );
 }
