@@ -277,12 +277,23 @@ export default function App() {
             <div className="experience-timeline">
               <div className="experience-item">
                 <div className="experience-header">
-                  <div className="experience-title">Software Engineer Intern</div>
+                  <div className="experience-title">AI Engineer Intern</div>
                   <div className="experience-company">Sentri AI</div>
                   <div className="experience-date">May 2025 - Present</div>
                 </div>
                 <div className="experience-description">
                   Designed and implemented an automated answering pipeline using <span className="tech-highlight">LangGraph</span>, achieving 95% accuracy in security compliance responses. Built scalable full-stack features with <span className="tech-highlight">React</span>, <span className="tech-highlight">Next.js</span>, <span className="tech-highlight">Python</span>, and <span className="tech-highlight">FastAPI</span>.
+                </div>
+              </div>
+
+              <div className="experience-item">
+                <div className="experience-header">
+                  <div className="experience-title">Software Engineer Intern</div>
+                  <div className="experience-company">American Society for Radiation Oncology (ASTRO)</div>
+                  <div className="experience-date">Mar 2025 - May 2025</div>
+                </div>
+                <div className="experience-description">
+                  Developed a full-stack study guide platform using <span className="tech-highlight">React</span>, <span className="tech-highlight">Next.js</span>, and <span className="tech-highlight">Supabase</span>, used by <span className="tech-highlight">500+ students</span> annually for exam prep and review. Co-authored a paper (publication pending) with top university researchers, evaluating <span className="tech-highlight">LLM accuracy</span> on <span className="tech-highlight">250+</span> study guide questions.
                 </div>
               </div>
 
