@@ -277,7 +277,7 @@ export default function App() {
             <div className="experience-timeline">
               <div className="experience-item">
                 <div className="experience-header">
-                  <div className="experience-title">AI Engineer Intern</div>
+                  <div className="experience-title">Applied AI/Software Engineer Intern</div>
                   <div className="experience-company">Sentri AI</div>
                   <div className="experience-date">May 2025 - Present</div>
                 </div>
