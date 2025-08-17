@@ -288,7 +288,7 @@ export default function App() {
 
               <div className="experience-item">
                 <div className="experience-header">
-                  <div className="experience-title">Software Engineer Intern</div>
+                  <div className="experience-title">AI Research Assistant/Software Engineer Intern</div>
                   <div className="experience-company">American Society for Radiation Oncology (ASTRO)</div>
                   <div className="experience-date">Mar 2025 - May 2025</div>
                 </div>
