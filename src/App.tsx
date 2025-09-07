@@ -116,19 +116,10 @@ export default function App() {
               <p className="card-subtitle">Software Engineer | CS @ University of Toronto</p>
             </div>
             <p className="section-text">
-            I'm from Toronto and enjoy building impactful software while exploring new, innovative ideas. I'm always open to new opportunities, so feel free to reach out!
-
-
-
-
-
-
-
-
-
+            Hi, my name is Brandon! I love to <strong>build</strong>. Whether it's at hackathons (won 6 so far!) or turning ideas into products people actually use. I recently built Comet, bringing AI-powered editing to Overleaf. I turn <strong>"wouldn't it be cool if..."</strong> moments into working code.
 </p>
             <p className="section-text">
- When I'm not in school, I'm usually watching the Toronto Raptors and the Toronto Blue Jays!</p>
+ When I'm not coding, you'll catch me watching the <strong>Raptors</strong> or <strong>Blue Jays</strong>!</p>
           </div>
         );
       case 'skills':
