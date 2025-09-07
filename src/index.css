@@ -605,7 +605,7 @@ html, body {
 }
 
 .portfolio-card::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.05);
+  background: transparent;
   border-radius: 1px;
   margin: 0;
 }
@@ -618,6 +618,12 @@ html, body {
 
 .portfolio-card::-webkit-scrollbar-thumb:hover {
   background: rgba(255, 255, 255, 0.3);
+}
+
+/* Firefox scrollbar styling */
+.portfolio-card {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
 }
 
 /* Mobile scrollbar */
