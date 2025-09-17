@@ -22,12 +22,14 @@ export default function App() {
   const [modalImage, setModalImage] = useState({ src: '', alt: '' });
 
   const projects = [
+   
     {
-      name: "Comet",
-      description: "Comet is a Chrome extension that brings the power of AI-assisted editing to Overleaf, similar to how Cursor revolutionized code editing. Simply describe your LaTeX changes in natural language, and watch as Comet generates and applies precise LaTeX code directly to your Overleaf documents.",
-      techStack: ["Vue.js", "LangChain", "LangGraph", "DeepSeek V3", "Express.js", "Supabase", "Chrome Extension API"],
-      githubLink: "https://github.com/BrandonT310442/Comet-Extension",
-      imagePath: "/Comet Extension.png"
+      name: "Gagggle",
+      description: "Built AI whiteboard with Next.js and React that generates sticky notes from prompts, branches ideas into sub-concepts, and merges thoughts using Groq LLM API and OpenAI API. Developed Express.js backend with LangChain and LangGraph for AI workflows, Socket.io for real-time collaboration with live cursors and team editing.",
+      techStack: ["React", "Next.js", "Express.js", "LangChain", "LangGraph", "Groq LLM API", "OpenAI API", "Socket.io"],
+      githubLink: "https://github.com/BrandonT310442/Gagggle",
+      demoLink: "https://devpost.com/software/gagggle",
+      imagePath: "/gagggle.gif"
     },
     {
       name: "Qnect",
@@ -36,6 +38,13 @@ export default function App() {
       githubLink: "https://github.com/fredh2006/qnect",
       demoLink: "https://www.youtube.com/watch?v=k2-dmvFxZMg",
       imagePath: "/qnect.png"
+    },
+    {
+      name: "Comet",
+      description: "Comet is a Chrome extension that brings the power of AI-assisted editing to Overleaf, similar to how Cursor revolutionized code editing. Simply describe your LaTeX changes in natural language, and watch as Comet generates and applies precise LaTeX code directly to your Overleaf documents.",
+      techStack: ["Vue.js", "LangChain", "LangGraph", "DeepSeek V3", "Express.js", "Supabase", "Chrome Extension API"],
+      githubLink: "https://github.com/BrandonT310442/Comet-Extension",
+      imagePath: "/Comet Extension.png"
     },
     {
       name: "Vortex AI",
@@ -70,7 +79,9 @@ export default function App() {
   const getProjectPreview = (projectName: string) => {
     switch (projectName) {
       case "Comet":
-        return "The Cursor for Overleaf - AI-powered LaTeX editing";
+        return "The Cursor for Overleaf. AI-powered LaTeX editing";
+      case "Gagggle":
+        return "AI whiteboard for collaborative brainstorming";
       case "Qnect":
         return "AI-powered blind dating app with intelligent matching";
       case "Vortex AI":
