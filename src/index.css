@@ -601,43 +601,43 @@ html, body {
 
 /* Custom Scrollbar */
 .portfolio-card::-webkit-scrollbar {
-  width: 2px;
+  width: 8px;
 }
 
 .portfolio-card::-webkit-scrollbar-track {
-  background: transparent;
-  border-radius: 1px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
   margin: 0;
 }
 
 .portfolio-card::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 1px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
   border-right: none;
 }
 
 .portfolio-card::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.5);
 }
 
 /* Firefox scrollbar styling */
 .portfolio-card {
-  scrollbar-width: thin;
-  scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+  scrollbar-width: auto;
+  scrollbar-color: rgba(255, 255, 255, 0.3) rgba(255, 255, 255, 0.05);
 }
 
 /* Mobile scrollbar */
 @media (max-width: 768px) {
   .portfolio-card::-webkit-scrollbar {
-    width: 1px;
+    width: 6px;
   }
   
   .portfolio-card::-webkit-scrollbar-track {
-    border-radius: 0.5px;
+    border-radius: 3px;
   }
   
   .portfolio-card::-webkit-scrollbar-thumb {
-    border-radius: 0.5px;
+    border-radius: 3px;
   }
 }
 
@@ -1489,20 +1489,21 @@ html, body {
 
 /* Custom scrollbar for project list container */
 .project-list-container::-webkit-scrollbar {
-  width: 2px;
+  width: 8px;
 }
 
 .project-list-container::-webkit-scrollbar-track {
-  background: transparent;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
 }
 
 .project-list-container::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.15);
-  border-radius: 1px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
 }
 
 .project-list-container::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.5);
 }
 
 /* Mobile Projects */
