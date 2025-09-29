@@ -127,10 +127,10 @@ export default function App() {
               <p className="card-subtitle">Software Engineer | CS @ University of Toronto</p>
             </div>
             <p className="section-text">
-            Hi, my name is Brandon! I love to <strong>build</strong>. Whether it's at hackathons (won 6 so far!) or turning ideas into products people actually use. I recently built Comet, bringing AI-powered editing to Overleaf. I turn <strong>"wouldn't it be cool if..."</strong> moments into working code.
+            Hi, my name is Brandon! I love to <strong>build</strong>. Whether it's at hackathons (won 6 so far!) or turning ideas into products people actually use. I recently built Gagggle, an AI powered whiteboard for collaborative brainstorming. I turn <strong>"wouldn't it be cool if..."</strong> moments into working code.
 </p>
             <p className="section-text">
- When I'm not coding, you'll catch me watching the <strong>Raptors</strong> or <strong>Blue Jays</strong>!</p>
+ When I'm not coding, you'll catch me watching the <strong>Raptors</strong> or <strong>Blue Jays</strong>. My favourite NBA Player is <strong>Shai Gilgeous Alexander!</strong></p>
           </div>
         );
       case 'skills':
