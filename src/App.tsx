@@ -127,7 +127,7 @@ export default function App() {
               <p className="card-subtitle">Software Engineer | CS @ University of Toronto</p>
             </div>
             <p className="section-text">
-            Hi, my name is Brandon! I love to <strong>build</strong>. Whether it's at hackathons (won 6 so far!) or turning ideas into products people actually use. I recently built Gagggle, an AI powered whiteboard for collaborative brainstorming. I turn <strong>"wouldn't it be cool if..."</strong> moments into working code.
+            Hi, my name is Brandon! I love to <strong>build</strong>. Whether it's at hackathons (won 6 so far!) or turning ideas into products people actually use. I turn <strong>"wouldn't it be cool if..."</strong> moments into working code.
 </p>
             <p className="section-text">
  When I'm not coding, you'll catch me watching the <strong>Raptors</strong> or <strong>Blue Jays</strong>. My favourite NBA Player is <strong>Shai Gilgeous Alexander!</strong></p>
@@ -277,9 +277,22 @@ export default function App() {
             </div>
             
             <div className="experience-timeline">
+
+
+            <div className="experience-item">
+                <div className="experience-header">
+                  <div className="experience-title">Software Engineer Intern</div>
+                  <div className="experience-company">Besimple AI (YC X25)</div>
+                  <div className="experience-date">May 2025 - Present</div>
+                </div>
+                <div className="experience-description">
+                  Helping build the #1 AI data annotation and evaluation platform. Backed by YC and more.
+                </div>
+              </div>
+
               <div className="experience-item">
                 <div className="experience-header">
-                  <div className="experience-title">Applied AI/Software Engineer Intern</div>
+                  <div className="experience-title">AI/Software Engineer Intern</div>
                   <div className="experience-company">Sentri AI</div>
                   <div className="experience-date">May 2025 - Present</div>
                 </div>
@@ -290,12 +303,12 @@ export default function App() {
 
               <div className="experience-item">
                 <div className="experience-header">
-                  <div className="experience-title">AI Research Assistant/Software Engineer Intern</div>
+                  <div className="experience-title">Software Engineer Intern</div>
                   <div className="experience-company">American Society for Radiation Oncology (ASTRO)</div>
                   <div className="experience-date">Mar 2025 - May 2025</div>
                 </div>
                 <div className="experience-description">
-                  Developed a full-stack study guide platform using <span className="tech-highlight">React</span>, <span className="tech-highlight">Next.js</span>, and <span className="tech-highlight">Supabase</span>, used by <span className="tech-highlight">500+ students</span> annually for exam prep and review. Co-authored a paper (publication pending) with top university researchers, evaluating <span className="tech-highlight">LLM accuracy</span> on <span className="tech-highlight">250+</span> study guide questions.
+                  Developed a full-stack study guide platform using <span className="tech-highlight">React</span>, <span className="tech-highlight">Next.js</span>, and <span className="tech-highlight">Supabase</span>, used by <span className="tech-highlight">500+ students</span> annually for exam prep and review.
                 </div>
               </div>
 
@@ -303,7 +316,7 @@ export default function App() {
                 <div className="experience-header">
                   <div className="experience-title">Founding Engineer</div>
                   <div className="experience-company">Stryde Health</div>
-                  <div className="experience-date">Feb 2025 - Present</div>
+                  <div className="experience-date">Feb 2025 - October 2025</div>
                 </div>
                 <div className="experience-description">
                   Developed patient app and clinician dashboard to enhance accessibility for stroke survivors; built using <span className="tech-highlight">React</span>, <span className="tech-highlight">Spring Boot</span>, and <span className="tech-highlight">AWS PostgreSQL</span> backend (entering trial at SHN in August). Integrated AI-powered recovery insights and used <span className="tech-highlight">LLMs</span> to generate cognition tests within the clinician dashboard, contributing to a <span className="tech-highlight">15% increase</span> in patient adherence.
@@ -312,7 +325,7 @@ export default function App() {
 
               <div className="experience-item">
                 <div className="experience-header">
-                  <div className="experience-title">Full Stack Software Engineer</div>
+                  <div className="experience-title">Software Engineer</div>
                   <div className="experience-company">UofT Blueprint</div>
                   <div className="experience-date">Sep 2024 - Mar 2025</div>
                 </div>
@@ -321,16 +334,7 @@ export default function App() {
                 </div>
               </div>
 
-              <div className="experience-item">
-                <div className="experience-header">
-                  <div className="experience-title">Lead Software Engineer</div>
-                  <div className="experience-company">FIRST Robotics Team 7558</div>
-                  <div className="experience-date">Sep 2022 - Jun 2024</div>
-                </div>
-                <div className="experience-description">
-                  Built full-stack analytics app using <span className="tech-highlight">MongoDB</span>, <span className="tech-highlight">Express.js</span>, <span className="tech-highlight">Vue.js</span>, and <span className="tech-highlight">Node.js</span> for robot performance analysis (250+ users).
-                </div>
-              </div>
+            
 
               <div className="experience-item">
                 <div className="experience-header">
