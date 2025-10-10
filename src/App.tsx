@@ -127,10 +127,18 @@ export default function App() {
               <p className="card-subtitle">Software Engineer | CS @ University of Toronto</p>
             </div>
             <p className="section-text">
-            Hi, my name is Brandon! I love to <strong>build</strong>. Whether it's at hackathons (won 6 so far!) or turning ideas into products people actually use. I turn <strong>"wouldn't it be cool if..."</strong> moments into working code.
+  Hi, my name is <strong>Brandon</strong> and I love to <strong>build!</strong>
 </p>
-            <p className="section-text">
- When I'm not coding, you'll catch me watching the <strong>Raptors</strong> or <strong>Blue Jays</strong>. My favourite NBA Player is <strong>Shai Gilgeous Alexander!</strong></p>
+
+<p className="section-text">
+  I build because <strong>creation gives me energy</strong>. There’s something special about watching an idea evolve into something real, <strong>line by line, piece by piece</strong>.
+</p>
+
+<p className="section-text">
+  I don’t just build to finish; I build because the <strong>process itself</strong> is what makes me feel <strong>alive</strong>.
+</p>
+
+
           </div>
         );
       case 'skills':
@@ -283,7 +291,7 @@ export default function App() {
                 <div className="experience-header">
                   <div className="experience-title">Software Engineer Intern</div>
                   <div className="experience-company">Besimple AI (YC X25)</div>
-                  <div className="experience-date">May 2025 - Present</div>
+                  <div className="experience-date">October 2025 - Present</div>
                 </div>
                 <div className="experience-description">
                   Helping build the #1 AI data annotation and evaluation platform. Backed by YC and more.
